@@ -16,6 +16,10 @@ Spring Boot Demo with Docker support
 * docker run -d -p 8080:8080 -t linuxchina/boot-demo-docker
 
 
+### Docker Compose
+
+* Distributed Application Bundle:  $ docker-compose bundle
+
 ### reference
 
 * https://spring.io/guides/gs/spring-boot-docker/
