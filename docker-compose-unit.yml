@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+  maven:
+      image: maven:3.3.3-jdk-8
+      volumes:
+          - '.:/usr/src/app'
+          - '~/.m2:/root/.m2'
+      working_dir: /usr/src/app
+      environment:
+          SPRING_APPLICATION_JSON: '{"spring.redis.host":"redis.host"}'
+      command:  mvn -B clean test
+      depends_on:
+        - redis
+      links:
+          - redis:redis.host
+  redis:
+      image: redis:3.2-alpine
+      ports:
+        - "6379:6379"
