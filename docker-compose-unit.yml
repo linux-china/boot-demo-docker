@@ -16,5 +16,3 @@ services:
           - redis:redis.host
   redis:
       image: redis:3.2-alpine
-      ports:
-        - "6379:6379"
